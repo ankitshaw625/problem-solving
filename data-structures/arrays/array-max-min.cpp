@@ -1,28 +1,30 @@
 #include <iostream>
 #include <climits>
+#include <vector>
 using namespace std;
 
-int n;
-
-int *get_array_input()
+vector<int> get_array_input()
 {
+  int n;
   cout << "Enter the count of numbers in the array: ";
   cin >> n;
 
-  int *nums = new int[n];
+  vector<int> nums;
   cout << "Enter the numbers seperated by space: " << endl;
   for (int i = 0; i < n; i++)
   {
-    cin >> nums[i];
+    int num;
+    cin >> num;
+    nums.push_back(num);
   }
 
   return nums;
 }
 
-int get_max(int *nums)
+int get_max(vector<int> nums)
 {
   int max = INT_MIN;
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < nums.size(); i++)
   {
     if (nums[i] > max)
     {
@@ -33,10 +35,10 @@ int get_max(int *nums)
   return max;
 }
 
-int get_min(int *nums)
+int get_min(vector<int> nums)
 {
   int min = INT_MAX;
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < nums.size(); i++)
   {
     if (nums[i] < min)
     {
@@ -49,7 +51,7 @@ int get_min(int *nums)
 
 int main()
 {
-  int *nums = get_array_input();
+  vector<int> nums = get_array_input();
 
   cout << "Max in the array: " << get_max(nums) << endl;
   cout << "Min in the array: " << get_min(nums) << endl;

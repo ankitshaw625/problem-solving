@@ -20,21 +20,20 @@ vector<int> get_array_input()
   return nums;
 }
 
-int sum_array(vector<int> nums)
+void print_reverse(vector<int> nums)
 {
-  int sum = 0;
-
-  for (int i = 0; i < nums.size(); i++)
+  cout << "Reversed Array: ";
+  for (int i = nums.size() - 1; i >= 0; i--)
   {
-    sum += nums[i];
+    cout << nums[i] << " ";
   }
 
-  return sum;
+  cout << endl;
 }
 
 int main()
 {
   vector<int> nums = get_array_input();
-  cout << "Sum of the entered numbers: " << sum_array(nums) << endl;
+  print_reverse(nums);
   return 0;
 }

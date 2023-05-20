@@ -1,18 +1,21 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int n;
 
-int *get_array_input()
+vector<int> get_array_input()
 {
   cout << "Enter the count of numbers in the array: ";
   cin >> n;
 
-  int *nums = new int[n];
+  vector<int> nums;
   cout << "Enter the numbers seperated by space: " << endl;
   for (int i = 0; i < n; i++)
   {
-    cin >> nums[i];
+    int num;
+    cin >> num;
+    nums.push_back(num);
   }
 
   return nums;
@@ -20,6 +23,6 @@ int *get_array_input()
 
 int main()
 {
-  int *nums = get_array_input();
+  vector<int> nums = get_array_input();
   return 0;
 }
