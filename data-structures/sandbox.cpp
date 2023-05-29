@@ -21,6 +21,14 @@ vector<int> get_array_input()
   return nums;
 }
 
+void print_array(vector<int> nums)
+{
+  for (int i = 0; i < nums.size(); i++)
+  {
+    cout << nums[i] << " ";
+  }
+}
+
 int main()
 {
   vector<int> nums = get_array_input();

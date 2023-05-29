@@ -31,9 +31,36 @@ void print_reverse(vector<int> nums)
   cout << endl;
 }
 
+void print_array(vector<int> nums)
+{
+  for (int i = 0; i < nums.size(); i++)
+  {
+    cout << nums[i] << " ";
+  }
+}
+
+void reverse_array(vector<int> &nums)
+{
+  int start = 0, end = nums.size() - 1;
+
+  while (start < end)
+  {
+    swap(nums[start], nums[end]);
+    start++;
+    end--;
+  }
+}
+
 int main()
 {
   vector<int> nums = get_array_input();
-  print_reverse(nums);
+  cout << "Before Reversing: ";
+  print_array(nums);
+  cout << endl
+       << "After Reversing: ";
+  reverse_array(nums);
+  print_array(nums);
+  cout << endl;
+  // print_reverse(nums);
   return 0;
 }
