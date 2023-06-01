@@ -30,6 +30,6 @@ void printPrimes(int limit)
 
 int main()
 {
-  printPrimes(2);
+  printPrimes(1000);
   return 0;
 }
