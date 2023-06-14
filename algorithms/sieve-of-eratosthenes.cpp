@@ -8,16 +8,14 @@ void printPrimes(int limit)
     return;
 
   vector<bool> composites(limit + 1);
-  composites[0] = true;
-  composites[1] = true;
 
-  for (int i = 2; i <= limit / 2; i++)
+  for (int i = 2; i * i <= limit; i++)
   {
     if (composites[i])
       continue;
 
-    for (int j = 2 * i; j <= limit; j += i)
-      composites[j] = true;
+    for (int j = i; i * j <= limit; j++)
+      composites[i * j] = true;
   }
 
   cout << "Primes upto " << limit << ": " << endl;
